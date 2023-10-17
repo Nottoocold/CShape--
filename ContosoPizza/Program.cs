@@ -16,6 +16,7 @@ dotnet ef database update --context {PizzaContext} 用来应用迁移文件
 */
 
 // Add the PromotionsContext
+builder.Services.AddSqlite<PromotionsDbContext>("Data Source=Promotions/Promotions.db");
 
 builder.Services.AddScoped<PizzaService>();
 

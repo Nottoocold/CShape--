@@ -1,5 +1,6 @@
 using ContosoPizza.Services;
 // Additional using declarations
+using ContosoPizza.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,6 +9,11 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 // Add the PizzaContext
+builder.Services.AddSqlite<PizzaDbContext>("Data Source=ContosoPizza.db");
+/*
+dotnet ef migrations add {InitialCreate} --context {PizzaContext} 用来生成迁移文件
+dotnet ef database update --context {PizzaContext} 用来应用迁移文件
+*/
 
 // Add the PromotionsContext
 

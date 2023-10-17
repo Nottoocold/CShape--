@@ -99,6 +99,5 @@ public class PizzaService
             _context.Pizzas.Remove(pizzaToDelete);
             _context.SaveChanges();
         }
-        throw new InvalidOperationException("Pizza not found");
     }
 }
